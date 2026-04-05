@@ -522,6 +522,149 @@
     }
   }
 
+
+  /* ══ PRICING ══ */
+  #pricing {
+    background: var(--bg2);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .pricing-group {
+    margin-top: 2.5rem;
+  }
+
+  .pricing-group-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border-light);
+    border: 1px solid var(--border-light);
+  }
+
+  .pricing-card {
+    background: var(--bg);
+    padding: 2rem;
+  }
+
+  .pricing-card-label {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+
+  .pricing-card-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+  }
+
+  .pricing-card-price {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .pricing-note {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 0.8rem;
+    font-style: italic;
+  }
+
+  .pricing-list {
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+  }
+
+  .pricing-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.4rem 1.8rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .pricing-list-item:last-child { border-bottom: none; }
+
+  .pricing-list-item--highlight {
+    background: var(--bg2);
+  }
+
+  .pricing-list-name {
+    font-weight: 500;
+    font-size: 0.92rem;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+
+  .pricing-list-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .pricing-list-price {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.88rem;
+    color: var(--gold);
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .pricing-notes {
+    margin-top: 2rem;
+    padding: 2rem;
+    border: 1px solid var(--border-light);
+    background: var(--bg);
+  }
+
+  .pricing-notes-title {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  .pricing-notes-item {
+    display: flex;
+    gap: 0.8rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 0.6rem;
+  }
+
+  .pricing-notes-dot {
+    color: var(--gold);
+    font-size: 0.5rem;
+    margin-top: 0.55rem;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 640px) {
+    .pricing-cards { grid-template-columns: 1fr; }
+    .pricing-list-item { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  }
+
   /* ══ ANIMATIONS ══ */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
@@ -747,6 +890,80 @@
 </section>
 
 <!-- CTA -->
+<!-- ── PRICING ── -->
+<section id="pricing">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">報價方案</p>
+      <h2 class="section-title">透明收費，<br>訪談後確認報價</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="pricing-group reveal">
+      <div class="pricing-group-title">一次性建置費用</div>
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <div class="pricing-card-label">標準導入</div>
+          <div class="pricing-card-desc">需求明確、照系統架構走</div>
+          <div class="pricing-card-price">NT$20,000 - 30,000</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card-label">含客製調整</div>
+          <div class="pricing-card-desc">流程複雜、需配合現有工具或特殊需求</div>
+          <div class="pricing-card-price">NT$30,000 - 50,000</div>
+        </div>
+      </div>
+      <div class="pricing-note">實際報價於需求訪談後確認</div>
+    </div>
+
+    <div class="pricing-group reveal">
+      <div class="pricing-group-title">後續費用</div>
+      <div class="pricing-list">
+        <div class="pricing-list-item">
+          <div class="pricing-list-left">
+            <div class="pricing-list-name">人為操作問題排除</div>
+            <div class="pricing-list-desc">因人為操作導致的設定錯誤或異動，如 Notion 欄位被修改、LINE OA 設定被更動等</div>
+          </div>
+          <div class="pricing-list-price">NT$1,500 - 3,000／次</div>
+        </div>
+        <div class="pricing-list-item">
+          <div class="pricing-list-left">
+            <div class="pricing-list-name">新增功能需求</div>
+            <div class="pricing-list-desc">依需求規模另外報價</div>
+          </div>
+          <div class="pricing-list-price">另議</div>
+        </div>
+        <div class="pricing-list-item pricing-list-item--highlight">
+          <div class="pricing-list-left">
+            <div class="pricing-list-name">系統本身問題</div>
+            <div class="pricing-list-desc">由省腦工作室負責維護修復</div>
+          </div>
+          <div class="pricing-list-price">免費</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-notes reveal">
+      <div class="pricing-notes-title">重要說明</div>
+      <div class="pricing-notes-list">
+        <div class="pricing-notes-item">
+          <span class="pricing-notes-dot">◆</span>
+          付款時間：教學交接完成後
+        </div>
+        <div class="pricing-notes-item">
+          <span class="pricing-notes-dot">◆</span>
+          API 使用費用（Claude / OpenAI）由客戶自行申請並承擔，依實際使用量計費，一般中小企業每月約 NT$100 - 800，建置時會協助設定用量上限
+        </div>
+        <div class="pricing-notes-item">
+          <span class="pricing-notes-dot">◆</span>
+          系統以 Notion 為核心，若需串接其他工具（如 Google 表單、自有系統等），工程另計費用
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <section id="cta">
   <div class="section-inner">
     <div class="reveal">
